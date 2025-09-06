@@ -18,7 +18,7 @@ const ProductList: React.FC<ProductListProps> = ({ onQuantityChange, quantities,
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const loadedProducts = await loadProductsFromCSV('/products.csv');
+        const loadedProducts = await loadProductsFromCSV('./products.csv');
         setProducts(loadedProducts);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Unknown error');
